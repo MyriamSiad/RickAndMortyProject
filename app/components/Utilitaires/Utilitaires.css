@@ -1,0 +1,136 @@
+/* Container principal */
+.character-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 40px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Bouton */
+.character-button {
+  background: #97ce4c;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 15px 40px;
+  border: 4px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 0 #5a7a2f, 0 12px 20px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s;
+  margin-bottom: 40px;
+}
+
+.character-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 0 #5a7a2f, 0 15px 25px rgba(0, 0, 0, 0.4);
+}
+
+.character-button:active {
+  transform: translateY(4px);
+  box-shadow: 0 4px 0 #5a7a2f, 0 6px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Carte du personnage */
+.character-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  max-width: 400px;
+  width: 100%;
+  border: 5px solid #000;
+  transition: transform 0.3s;
+}
+
+.character-card:hover {
+  transform: scale(1.03);
+}
+
+/* Image */
+.character-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-bottom: 5px solid #000;
+  display: block;
+}
+
+/* Informations */
+.character-info {
+  padding: 25px;
+  background: linear-gradient(to bottom, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.character-info p {
+  margin: 12px 0;
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.character-info p strong {
+  font-weight: bold;
+  color: #000;
+  min-width: 80px;
+  margin-right: 10px;
+}
+
+/* Nom du personnage - Style spécial */
+.character-name {
+  font-size: 28px !important;
+  font-weight: bold;
+  color: #97ce4c;
+  text-align: center;
+  margin-bottom: 20px !important;
+  text-shadow: 2px 2px 0 #000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Badge de statut */
+.status-badge {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.status-alive {
+  background: #55cc44;
+  color: #fff;
+}
+
+.status-dead {
+  background: #d63d2d;
+  color: #fff;
+}
+
+.status-unknown {
+  background: #9e9e9e;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .character-card {
+    max-width: 100%;
+  }
+  
+  .character-image {
+    height: 300px;
+  }
+  
+  .character-name {
+    font-size: 22px !important;
+  }
+}

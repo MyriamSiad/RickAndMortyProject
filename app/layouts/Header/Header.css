@@ -1,0 +1,17 @@
+/* Reset spécifique au header */
+.main-head {
+  all: unset;
+  display: block;
+  width: 100%;
+}
+
+.main-head * {
+  all: unset;
+}
+
+/* Puis remettez tous vos styles après */
+.main-head {
+  background: linear-gradient(135deg, #00b5cc 0%, #97ce4c 100%);
+  padding: 30px 20px;
+  /* ... */
+}

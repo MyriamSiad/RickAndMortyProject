@@ -1,3 +1,6 @@
+
+import {Footer} from "@/layouts/Footer/Footer";
+import MainNav from "@/naviguation/MainNav/MainNav";
 import {
   isRouteErrorResponse,
   Links,
@@ -32,10 +35,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Meta />
         <Links />
       </head>
+     
       <body>
+         <MainNav/>
         {children}
         <ScrollRestoration />
         <Scripts />
+        <Footer/>
       </body>
     </html>
   );

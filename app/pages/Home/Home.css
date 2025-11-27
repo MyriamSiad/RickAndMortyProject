@@ -1,0 +1,149 @@
+.homepage {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 60px 20px;
+}
+
+/* Section univers */
+.universe-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 50px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  border: 4px solid #97ce4c;
+}
+
+/* Titre principal */
+.universe-title {
+  font-size: 48px;
+  color: #97ce4c;
+  text-align: center;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  text-shadow: 3px 3px 0 #000;
+  letter-spacing: 2px;
+}
+
+/* Sous-titre */
+.universe-subtitle {
+  font-size: 24px;
+  color: #00b5cc;
+  text-align: center;
+  margin-bottom: 40px;
+  font-style: italic;
+}
+
+/* Paragraphes */
+.universe-text {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+/* Première lettre stylisée */
+.universe-text:first-of-type::first-letter {
+  font-size: 72px;
+  font-weight: bold;
+  color: #97ce4c;
+  float: left;
+  line-height: 60px;
+  padding-right: 10px;
+  text-shadow: 2px 2px 0 #000;
+}
+
+/* Highlights */
+.highlight {
+  background: linear-gradient(120deg, #97ce4c 0%, #00b5cc 100%);
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Cards des concepts */
+.concepts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.concept-card {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 30px;
+  border-radius: 15px;
+  border: 3px solid #97ce4c;
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.concept-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(151, 206, 76, 0.3);
+}
+
+.concept-icon {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.concept-title {
+  font-size: 24px;
+  color: #1a1a2e;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.concept-description {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Citation */
+.quote-box {
+  background: #1a1a2e;
+  color: #97ce4c;
+  padding: 30px;
+  border-left: 6px solid #97ce4c;
+  border-radius: 10px;
+  margin: 40px 0;
+  font-size: 20px;
+  font-style: italic;
+  text-align: center;
+}
+
+.quote-author {
+  color: #fff;
+  margin-top: 15px;
+  font-size: 16px;
+  font-style: normal;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .universe-section {
+    padding: 30px 20px;
+  }
+  
+  .universe-title {
+    font-size: 32px;
+  }
+  
+  .universe-subtitle {
+    font-size: 18px;
+  }
+  
+  .universe-text {
+    font-size: 16px;
+    text-align: left;
+  }
+  
+  .concepts {
+    grid-template-columns: 1fr;
+  }
+}
