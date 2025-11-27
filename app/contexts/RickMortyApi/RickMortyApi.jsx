@@ -24,7 +24,7 @@ export default function RickMortyProvider({children}){
             console.log("erreur dans l'api RickMorty");
         }
         setPersonnages(datas)
-        setPersonnage(datas[Math.floor(Math.random() * datas.length)]);
+        //setPersonnage(datas[Math.floor(Math.random() * datas.length)]);
        // setloading(false);
       }catch(err){
         console.error(err);
@@ -33,14 +33,32 @@ export default function RickMortyProvider({children}){
     }
 
     function getPersonnage(){
+       if(personnages.length === 0){
+        console.log("Pas encore de personnages chargés");
+        return;
+    }
 
-        
-        const personnageList = personnages;
-        setPersonnage(personnageList[Math.floor(Math.random() * personnageList.length)]);
+    setPersonnage(() => {
+      const currentPool =
+        charactersPool.length > 0
+          ? charactersPool
+          : personnages;
 
-        console.log(personnageList);
+      const randomCharacter =
+        currentPool[
+          Math.floor(Math.random() * currentPool.length)
+        ];
+
+      setCharactersPool(() => {
+        return currentPool.filter(
+          (character) => character !== randomCharacter
+        );
+      });
+
+      return randomCharacter;
+    });
         
-    
+        
     }
 
     return(<>

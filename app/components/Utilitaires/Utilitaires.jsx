@@ -1,12 +1,14 @@
 import "./Utilitaires.css"
 import { useContext, useEffect } from 'react'
 import {RickMortyContext} from '@/contexts/RickMortyApi/RickMortyApi'
+import MonImage from "../../assets/images/Myimage.jpg"
 export default  function Utilitaires(){
 
    const {fetchPersonnages , personnage, getPersonnage} = useContext(RickMortyContext);
    useEffect (()=>{
-       fetchPersonnages();
-
+       fetchPersonnages().then(() => {
+        getPersonnage();
+       })
     }, [])
     return(<>
         <div className="character-container">
@@ -16,22 +18,22 @@ export default  function Utilitaires(){
   
   {personnage && (
             <div className="character-card">
-            <img className="character-image" src={personnage?.image} alt={personnage?.name} />
+            <img className="character-image" src={personnage?.image || {MonImage}} alt={personnage?.name} />
             
             <div className="character-info">
-                <p className="character-name">{personnage?.name}</p>
+                <p className="character-name">{personnage?.name || "Click on the button above to  generate a character"}</p>
                 
                 <p>
                 <strong>Status:</strong> 
                 {personnage?.status}
                 <span className={`status-badge status-${personnage?.status?.toLowerCase()}`}>
-                    {personnage?.status}
+                    {personnage?.status ||'N/A'}
                 </span>
                 </p>
                 
                 <p><strong>Type:</strong> {personnage?.type || 'N/A'}</p>
-                <p><strong>Gender:</strong> {personnage?.gender}</p>
-                <p><strong>Origin:</strong> {personnage?.origin}</p>
+                <p><strong>Gender:</strong> {personnage?.gender ||'N/A'}</p>
+                <p><strong>Origin:</strong> {personnage?.origin || 'N/A'}</p>
             </div>
             </div>
         )}

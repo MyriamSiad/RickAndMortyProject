@@ -21,6 +21,7 @@
       "@/layouts/*": ["./app/layouts/*"],
       "@/navigation/*": ["./app/navigation/*"],
       "@/pages/*": ["./app/pages/*"],
+      
     },
     "esModuleInterop": true,
     "verbatimModuleSyntax": true,
